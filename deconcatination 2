@@ -5,15 +5,16 @@ void deconca( char* Dc[]){
   char d[]=" ";
   int len = strlen(Dc);
   k=0;
-  for (i=0;i<strln(Dc);i++)
+  for (i=0;i<strln(Dc);i++) // nombre de parametres
   {
     if (Dc[i]=' ')
       {
         k++
       } 
    }
-  str=(char*)malloc(size of(char)*k);
-  for (i=0;i<len);i++)
+  str=(char*)malloc(size of(char)*k); // tableau des parametres
+  // extraire les parametres
+  for (i=0;i<len);i++) 
   {
     char *p = strtok(Dc, d);
     while(p != NULL)
