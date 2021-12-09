@@ -13,7 +13,6 @@ char* deconcatCmd (char* commande){ //fonction qui permet à partir d'un tableau
     
     token = strtok(commande, " "); // initialisation de strtok
     
-
     while (token != NULL){ // tant qu'il reste des mots
         res[nbmots]=token;
         token = strtok(NULL, " "); //première lettre du mot suivant
