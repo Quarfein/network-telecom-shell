@@ -7,9 +7,9 @@
 
 
 
-String dewIt(char *cmd, char **argv)
+char* dewIt(char *cmd, char **argv)
 {   pid_t simba;    //Simba is the state of our fork, the code returned by the function.
-    simba=fork()
+    simba=fork();
     if (simba==-1){
         perror("fork failed");
         return 1;
