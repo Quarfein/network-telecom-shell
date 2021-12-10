@@ -1,9 +1,21 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+char** deconcatCmd (char* commande);
+
 
 int main()
 {
+
+    /* char test[] = "yes No je mange des pates aux saumons du crous";
+    char** cmds;
+    cmds = deconcatCmd(test);
+    int j, nbmots = 7;
+    for (j=0; j<nbmots; j++){     // Juste pour afficher le contenu de res, pour le déboggage 
+        printf("%s ", cmds[j]);
+    } */
+
     int flag = 1;
     char input[100];
     char working_dir[100];

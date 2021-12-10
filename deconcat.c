@@ -2,13 +2,13 @@
 #include <string.h>
 #include <stdlib.h>
 
-char* deconcatCmd (char* commande){ //fonction qui permet à partir d'un tableau de caractères, de le déconcaténer en plusieurs tableaux de caractère eux meme dans un tableau.
+char** deconcatCmd (char* commande){ //fonction qui permet à partir d'un tableau de caractères, de le déconcaténer en plusieurs tableaux de caractère eux meme dans un tableau.
     char *token, **res; //res est un pointeur sur pointeur sur char qui va devenir tableau
     int nbmots=0, j;
     int nbCara = strlen(commande); //nombre de caractère de la commande
-    printf("%d \n", nbCara);       //J'ai bien le nombre de caractères de ma commande.
+    //printf("%d \n", nbCara);       //J'ai bien le nombre de caractères de ma commande.
     //printf("%s", commande );    //J'arrive à avoir la commande et à l'afficher ce qui est deja bien
-    res = (char**) malloc (nbCara * sizeof(char)); // J'alloue a mon pointeur sur pointeur la taille necessaire
+    res = (char**) malloc (nbCara * sizeof(char*)); // J'alloue a mon pointeur sur pointeur la taille necessaire PS j'alloue trop mais on s'en fout (il n'y a pas autant de pointeurs que de caractères)
 
     
     token = strtok(commande, " "); // initialisation de strtok
@@ -20,15 +20,21 @@ char* deconcatCmd (char* commande){ //fonction qui permet à partir d'un tableau
     }
     
     
-    for (j=0; j<nbmots; j++){
-        printf("%s ", res[j]);
-    }
-
+    //for (j=0; j<nbmots; j++){     // Juste pour afficher le contenu de res, pour le déboggage 
+    //    printf("%s ", res[j]);
+    //}
+    return res;
 }
 
-int main(){     //pour le débuggage
+/* int main(){     //pour le débuggage
     printf("Hello \n");
     char test[] = "yes No je mange des pates aux saumons du crous";
-    deconcatCmd(test);
+    char** cmds;
+    cmds = deconcatCmd(test);
+    int j, nbmots = 7;
+    for (j=0; j<nbmots; j++){     // Juste pour afficher le contenu de res, pour le déboggage 
+        printf("%s ", cmds[j]);
+    }
+
     return 0;
-}
+} */
