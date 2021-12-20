@@ -7,8 +7,10 @@
 
 
 
-char* dewIt(char *cmd, char **argv)
-{   pid_t simba;    //Simba is the state of our fork, the code returned by the function.
+char* execution(char *cmd, char **argv){ //Fonction qui a pour but d'exécuter une commande.
+    
+    
+    pid_t simba;    //Simba is the state of our fork, the code returned by the function.
     simba=fork();
     if (simba==-1){
         perror("fork failed");
@@ -21,7 +23,7 @@ char* dewIt(char *cmd, char **argv)
 		return 1;                           // Since exec replaces a processus' pile.
     }
     else {      // Is parent
-        waitpid(simba, &status, WUNTRACED); // Waits for a status report from the child. WUNTRACED is only here in case we use SIG actions in further development.
+        waitpid(simba); // Waits for a status report from the child. WUNTRACED is only here in case we use SIG actions in further development.
     }
     
     
