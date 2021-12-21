@@ -30,14 +30,6 @@ int main()
         // printf("%s\n", input); //this has been used for debug
         // i hate life because switch case can't be used with strings
 
-        char *commande, **arguments, test[] = "yes No je mange des pates aux saumons du crous";
-        deconcatCmd(input, &commande, &arguments );
-        printf("\n Code : %s \n", commande);
-        int j, nbmots = 3;
-        for (j=0; j<nbmots; j++){     // Juste pour afficher le contenu de res, pour le déboggage 
-            printf("%s ", arguments[j]);
-    } 
-
         if (strcmp(input, "exit") == 0) // l'utilisateur veut quitter donc fin du programme
         {
             flag = 0;
