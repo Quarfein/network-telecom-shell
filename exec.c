@@ -3,9 +3,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
-
-
-
+#include <sys/wait.h>
 
 char* execution(char *cmd, char **argv){ //Fonction qui a pour but d'exécuter une commande.
     
