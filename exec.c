@@ -21,7 +21,7 @@ char* execution(char *cmd, char **argv){ //Fonction qui a pour but d'exécuter u
 		return 1;                           // Since exec replaces a processus' pile.
     }
     else {      // Is parent
-        waitpid(simba); // Waits for a status report from the child. WUNTRACED is only here in case we use SIG actions in further development.
+      //  waitpid(simba); // Waits for a status report from the child. WUNTRACED is only here in case we use SIG actions in further development.
     }
     
     
