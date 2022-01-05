@@ -2,24 +2,27 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-void deconcatCmd(char *commandeTotal, char **commande, char ***arguments);
+void deconcatCmd(char *commandeTotal, char ***arguments);
+void execution(char **argv);
 
 int main()
 {
 
-   /*  char test[] = "yes No je mange des pates aux saumons du crous";
+   /*  char test[] = "ip addr eth0";
     char **cmds;
-    cmds = deconcatCmd(test);
-    int j, nbmots = 10;
+    deconcatCmd(test, &cmds);
+    int j, nbmots = 4;
     for (j = 0; j < nbmots; j++)
     { // Juste pour afficher le contenu de res, pour le déboggage
-        printf("%s ", cmds[j]);
-    } */
+        printf("elem %d = %s \n", j, cmds[j]);
+    } 
+  */
 
     int flag = 1;
     char input[100];
     char working_dir[100];
     char temp;
+    char ** vecteur;
 
     while (flag == 1) //tant que l'utilisateur n'a pas dit qu'il voulait quitter on reste dans le programme
     {
@@ -27,13 +30,20 @@ int main()
         printf("%s$ ", working_dir);
         scanf("%[^\n]", input); //je lis jusqu'à ce que j'appuie sur Entrée
         scanf("%c", &temp);     //je stoque le Entrée quelque part pour qu'il évite de faire des carabistouilles ailleur (sans cette line c'est un peu n'importe quoi)
-        // printf("%s\n", input); //this has been used for debug
+        
+        //printf("%s\n", input); //this has been used for debug
         // i hate life because switch case can't be used with strings
-
         if (strcmp(input, "exit") == 0) // l'utilisateur veut quitter donc fin du programme
         {
             flag = 0;
         }
+
+        if (strcmp(input,"")!=0){
+            deconcatCmd(input, &vecteur);
+            execution(vecteur);
+            strcpy (input, "");
+        }
+        
     }
 
     return 0;
