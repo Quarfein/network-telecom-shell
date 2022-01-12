@@ -38,7 +38,7 @@ int main()
             flag = 0;
         }
 
-        if (strcmp(input,"")!=0){
+        else if (strcmp(input,"")!=0){
             deconcatCmd(input, &vecteur);
             execution(vecteur);
             strcpy (input, "");
