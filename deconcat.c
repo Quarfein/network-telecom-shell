@@ -19,7 +19,7 @@ void deconcatCmd(char *commandeTotal, char ***arguments)
     while (token != NULL)
     { // tant qu'il reste des mots
         (*arguments)[nbmots] = token;
-        token = strtok(NULL, " "); //première lettre du mot suivant
+        token = strtok(NULL, " "); // adresse de la première lettre du mot suivant
         nbmots++;
     }
     (*arguments)[nbmots] = NULL; // on met un NULL à la fin pour être sur que ça marche
