@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-void deconcatCmd(char *commandeTotal, char ***arguments);
-void execution(char **argv);
+#include "exec.h"
+#include "deconcat.h"
 
 int main()
 {

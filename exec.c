@@ -6,8 +6,8 @@
 #include <sys/wait.h>
 
 void execution(char **argv){ 
-//Fonction qui a pour but d'exécuter une commande.
-//Elle prend en paramètre uniquement le vecteur (il contient la commande et les arguments)
+/* Fonction qui a pour but d'exécuter une commande.
+Elle prend en paramètre uniquement le vecteur (il contient la commande et les arguments) */
     
     
     pid_t simba;    //Simba is the state of our fork, the code returned by the function.
@@ -26,13 +26,3 @@ void execution(char **argv){
       //  waitpid(simba); // Waits for a status report from the child. WUNTRACED is only here in case we use SIG actions in further development.
     }   
 }
-
-/* int main() {
-  char ** vecteur; // Je crée un pointeur sur pointeur sur charactère
-  vecteur = (char **)malloc(6 * sizeof(void *)); //je transforme le pointeur que je viens de crée en tableau en lui allouant de la place en mémoire
-  vecteur[0] = "ip";  //la commande 
-  vecteur[1] = "addr";    //un argument
-  execution(vecteur);
-  return 0;
-}
- */
