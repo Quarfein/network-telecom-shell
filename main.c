@@ -34,7 +34,4 @@ int main()
     }
 
     return 0;
-
-    // this whole thing really is a base. The most difficult things will be how do we make all of these commands?
-    //note pour le l'amélioration :
 }

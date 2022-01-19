@@ -13,7 +13,7 @@ CFLAGS  +=      -I./include/ -g3
 
 SRCS    =		exec.c \
 				deconcat.c \
-				base.c \
+				main.c \
 
 OBJS    = $(SRCS:.c=.o)
 
@@ -31,5 +31,3 @@ fclean: clean
 re:     fclean all
 
 .PHONY: all re clean fclean
-
-
