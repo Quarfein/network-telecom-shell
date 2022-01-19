@@ -21,10 +21,7 @@ int main ()  {
     //vecteur[3] = "-4";
     //vecteur[4] = "/";         
     vecteur[2] = NULL; // je finis par un NULL
-    //res = fork(); 
-    //if (res==0){
-        execvp(vecteur[0], &vecteur[0] ); //et j'execute
-    //}
+    execvp(vecteur[0], &vecteur[0] ); 
 
     
 }

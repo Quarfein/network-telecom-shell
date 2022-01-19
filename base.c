@@ -7,17 +7,6 @@ void execution(char **argv);
 
 int main()
 {
-
-   /*  char test[] = "ip addr eth0";
-    char **cmds;
-    deconcatCmd(test, &cmds);
-    int j, nbmots = 4;
-    for (j = 0; j < nbmots; j++)
-    { // Juste pour afficher le contenu de res, pour le déboggage
-        printf("elem %d = %s \n", j, cmds[j]);
-    } 
-  */
-
     int flag = 1;
     char input[100];
     char working_dir[100];
@@ -30,15 +19,13 @@ int main()
         printf("%s$ ", working_dir);
         scanf("%[^\n]", input); //je lis jusqu'à ce que j'appuie sur Entrée
         scanf("%c", &temp);     //je stoque le Entrée quelque part pour qu'il évite de faire des carabistouilles ailleur (sans cette line c'est un peu n'importe quoi)
-        
-        //printf("%s\n", input); //this has been used for debug
-        // i hate life because switch case can't be used with strings
+        //printf("%s\n", input); // A utiliser si besoin pour le débug
         if (strcmp(input, "exit") == 0) // l'utilisateur veut quitter donc fin du programme
         {
             flag = 0;
         }
 
-        else if (strcmp(input,"")!=0){
+        else if (strcmp(input,"")!=0){ // Si l'utlisateur ne veux aucun des choix possibles au dessus, alors on execute sa commande avec le execvp
             deconcatCmd(input, &vecteur);
             execution(vecteur);
             strcpy (input, "");

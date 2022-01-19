@@ -1,5 +1,5 @@
-//juste pour tester
-//shell minimal qui marche tant qu'il n'y a pas d'argument sur la commande
+/* juste pour tester
+shell minimal qui marche tant qu'il n'y a pas d'argument sur la commande */
 
 #include <stdio.h>
 #include <unistd.h>
