@@ -1,0 +1,1 @@
+void deconcatCmd(char *commandeTotal, char ***arguments);
