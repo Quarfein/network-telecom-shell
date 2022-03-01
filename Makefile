@@ -1,7 +1,7 @@
 #Fichier makefile créé par Akim
 #Remarque : attention à ne pas utiliser d'espace à la place de tabulation.
 
-NAME    =       Minishell
+NAME    =       RTshell
 
 CC      =       gcc -o
 
