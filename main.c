@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "exec.h"
 #include "deconcat.h"
+#include "signature.h"
 
 #define IMPUT_SIZE 100 //Taille max de la commande entrée par l'utilisateur
 #define DIR_SIZE 200 //Taille max du chemin absolu du répertoire courant
@@ -19,6 +20,8 @@ int main()
 
     char main_dir[DIR_SIZE];
     getcwd(main_dir, sizeof(main_dir)); //répertoire d'arrivé donc considéré comme répertoire home
+
+    signature();
 
     while (flag == 1) //tant que l'utilisateur n'a pas dit qu'il voulait quitter on reste dans le programme
     {

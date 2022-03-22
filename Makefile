@@ -14,6 +14,7 @@ CFLAGS  +=      -I./include/ -g3
 SRCS    =		exec.c \
 				deconcat.c \
 				main.c \
+				signature.c \
 
 OBJS    = $(SRCS:.c=.o)
 
