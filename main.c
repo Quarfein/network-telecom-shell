@@ -21,7 +21,7 @@ int main()
     char main_dir[DIR_SIZE];
     getcwd(main_dir, sizeof(main_dir)); //répertoire d'arrivé donc considéré comme répertoire home
 
-    signature();
+    signature(); //affichage d'un message d'introduction lors du lancement du shell.
 
     while (flag == 1) //tant que l'utilisateur n'a pas dit qu'il voulait quitter on reste dans le programme
     {
@@ -51,6 +51,9 @@ int main()
                 if (chdir(new_dir) != 0) { //si le dossier n'existe pas on affiche une erreur. NB : Dans tous les cas chdir est exécuté
                     perror("Changement de répertoire impossible");
                 }
+            }
+            else if (strcmp(vecteur[0], "rtshell") == 0 ){ //possibilité d'afficher la signature du shell en dehors du lancement du shell
+                signature();
             }
             else { // Si l'utlisateur ne veux aucun des choix possibles au dessus, alors on execute sa commande avec le execvp
                 execution(vecteur); //j'exécute
